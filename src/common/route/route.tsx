@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import MainPage from "../view/main_page";
-import TestPage from "../../server/view/server";
+import TestPage from "../../server/view/test";
 
 export default function MainRouter() {
   return (

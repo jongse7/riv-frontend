@@ -1,5 +1,9 @@
-import { AspectRatio } from "shadcn-react";
-import { Avatar, AvatarFallback, AvatarImage } from "./avator";
+import { AspectRatio } from "../../common/component/radix/aspect_ratio";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "../../common/component/radix/avator";
 import Entry from "./button/entry";
 
 export default function ServerCard({
@@ -15,14 +19,18 @@ export default function ServerCard({
       <div className="relative mb-[0.75rem]">
         <AspectRatio ratio={7 / 4}>
           {bgImg ? (
-            <img src={bgImg} className="rounded-[0.4rem]" />
+            <img
+              src={bgImg}
+              className="rounded-[0.4rem] w-full h-full object-cover"
+            />
           ) : (
             <div className="bg-gray-03 rounded-[0.4rem] w-full h-full" />
           )}
         </AspectRatio>
+
         <Avatar className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 size-[6.5625rem] border-[0.15rem] border-[#A9A9A9]">
           <AvatarImage src={pfImg || ""} />
-          <AvatarFallback className="text-white text-[1.75rem] font-semibold">
+          <AvatarFallback className="text-white bg-gray-03 text-[1.75rem] font-semibold">
             {fstName || "R"}
           </AvatarFallback>
         </Avatar>
