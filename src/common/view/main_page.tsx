@@ -1,24 +1,28 @@
-import Riv from "../component/riv";
+import { useNavigate } from "react-router-dom";
+import ServiceButton from "../../onboarding/component/service_button";
+import Riv from "../component/riv/riv";
 
 export default function MainPage() {
   return (
-    <section className="w-screen h-screen flex flex-row items-center justify-center bg-[#EEF9FC]">
-      <Riv className="w-[20rem] mr-[4rem]" />
-      <div>
+    <section className="w-screen h-screen flex flex-row items-center justify-center bg-[#EEF9FC] max-md:flex-col">
+      <Riv className="w-[20rem] mr-[4rem] max-md:mr-0 max-md:w-[16rem] max-md:mb-[2rem]" />
+      <div className="flex flex-col gap-[1.75rem]">
         <IntroSection />
+        <ButtonSection />
       </div>
     </section>
   );
 }
 
 function IntroSection() {
-  const pTextStyle: string = "text-[1rem] text-gray-06";
+  const pTextStyle: string =
+    "text-[1rem] text-gray-06 leading-[1.25rem] max-md:hidden";
   return (
-    <div>
+    <div className="flex flex-col max-md:items-center">
       <h1 className="text-[2.5rem] leading-[2rem] font-semibold">
         생각은 회의에,
       </h1>
-      <h1 className="mb-[0.75rem] text-[2.5rem] font-bold bg-gradient-to-r from-t-left to-t-right bg-clip-text text-transparent">
+      <h1 className="mb-[0.75rem] text-[2.5rem] font-bold bg-gradient-to-r from-text-left to-text-right bg-clip-text text-transparent">
         기록은 RIV에 맡기세요!
       </h1>
       <p className={pTextStyle}>
@@ -32,6 +36,28 @@ function IntroSection() {
         Riv는 오픈소스 프로젝트입니다. 우리 함께 열려있는 협업 세상을
         만들어봐요!
       </p>
+    </div>
+  );
+}
+
+function ButtonSection() {
+  const navigate = useNavigate();
+  return (
+    <div className="flex flex-row items-start gap-[1rem] max-sm:flex-col max-sm:items-center">
+      <ServiceButton
+        text="Add to Discord"
+        icon="/assets/icon/discord.svg"
+        className="bg-gradient-to-br from-discord-left to-discord-right px-[1.4rem]"
+        iconSize="0.8rem"
+        onClick={() => navigate("/")}
+      />
+      <ServiceButton
+        text="View on Github"
+        icon="/assets/icon/github.svg"
+        className="bg-gradient-to-br from-github-left via-github-center to-github-right"
+        iconSize="1.2rem"
+        onClick={() => window.open("https://github.com/OpenRiv", "_blank")}
+      />
     </div>
   );
 }
