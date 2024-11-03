@@ -1,3 +1,7 @@
-export default function RivFace() {
-  return <div></div>;
+interface RivProps {
+  className?: string;
+}
+
+export default function RivFace({ className = "" }: RivProps) {
+  return <img className={className} src={"/assets/riv/riv_face.png"} />;
 }

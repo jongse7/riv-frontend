@@ -1,28 +1,15 @@
-import { useState } from "react";
-
 interface ServerToggleProps {
-  initialActive?: boolean;
-  onToggle?: (isActive: boolean) => void;
+  isActive: boolean;
+  onToggle: () => void;
 }
 
 export default function ServerToggle({
-  initialActive = false,
+  isActive,
   onToggle,
 }: ServerToggleProps) {
-  const [isActive, setIsActive] = useState(initialActive);
-
-  const handleClick = () => {
-    const newActiveState = !isActive;
-    setIsActive(newActiveState);
-
-    if (onToggle) {
-      onToggle(newActiveState);
-    }
-  };
-
   return (
     <button
-      onClick={handleClick}
+      onClick={onToggle}
       className="size-[1.1rem] rounded-full flex items-center justify-center border-[0.1rem] border-gray-07"
     >
       <div
