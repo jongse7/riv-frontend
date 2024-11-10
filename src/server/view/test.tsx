@@ -1,4 +1,3 @@
-import Header from "../../common/layout/header";
 import Filter from "../component/button/filter";
 import List from "../component/button/list";
 import { Item, ListView } from "../component/listview";
@@ -35,7 +34,6 @@ export default function TestPage() {
 
   return (
     <>
-      <Header />
       <div className="h-screen flex gap-5 p-5 bg-[#444444] flex-wrap">
         <ServerCard />
         <ServerCard

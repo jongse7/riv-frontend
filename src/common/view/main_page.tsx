@@ -49,7 +49,7 @@ function ButtonSection() {
         icon="/assets/icon/discord.svg"
         className="bg-gradient-to-br from-discord-left to-discord-right px-[1.4rem]"
         iconSize="0.8rem"
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/server")}
       />
       <ServiceButton
         text="View on Github"

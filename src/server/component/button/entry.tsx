@@ -11,7 +11,7 @@ export default function Entry({
   ...props
 }: ButtonProps) {
   const dftBtnStyle =
-    "w-[5.8125rem] h-[4.0625rem] rounded-[0.75rem] text-medium hover:brightness-50 text-gray-09 transition duration-300";
+    "w-[5.8125rem] h-[4.0625rem] rounded-[0.75rem] text-medium hover:brightness-50 text-gray-09 transition duration-200";
   const typeStyle = isRiv ? "bg-primary hover:" : "bg-gray-05";
 
   return (

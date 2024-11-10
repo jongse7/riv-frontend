@@ -25,7 +25,8 @@
     "recoil": "^0.7.7",
     "shadcn-react": "^0.0.22",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vercel": "^37.14.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
