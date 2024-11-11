@@ -3,6 +3,7 @@ import MainPage from "../view/main_page";
 import TestPage from "../../server/view/test";
 import { Layout } from "./outlet";
 import ServerPage from "../../server/view/server/page";
+import SetupPage from "../../server/view/setup/page";
 
 export default function MainRouter() {
   return (
@@ -11,6 +12,7 @@ export default function MainRouter() {
       <Route path="/" element={<Layout />}>
         <Route path="/test" element={<TestPage />} />
         <Route path="/server" element={<ServerPage />} />
+        <Route path="/setup" element={<SetupPage />} />
       </Route>
     </Routes>
   );

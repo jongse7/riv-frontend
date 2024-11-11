@@ -1,10 +1,11 @@
-import { AspectRatio } from "../../common/component/radix/aspect_ratio";
+import { useNavigate } from "react-router-dom";
+import { AspectRatio } from "../../../common/component/radix/aspect_ratio";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../common/component/radix/avator";
-import Entry from "./button/entry";
+} from "../../../common/component/radix/avator";
+import Entry from "../button/entry";
 
 export default function ServerCard({
   svIcon,
@@ -12,6 +13,7 @@ export default function ServerCard({
   isRiv = false,
   serverName = "Riv's Server",
 }: ServerCardProps) {
+  const navigate = useNavigate();
   return (
     <div className="w-[22.1875rem]">
       <div className="relative mb-[0.75rem]">
@@ -37,7 +39,12 @@ export default function ServerCard({
             {isOwner ? "Owner" : "Member"}
           </p>
         </div>
-        <Entry isRiv={isRiv} />
+        <Entry
+          isRiv={isRiv}
+          onClick={() => {
+            navigate(`/setup`);
+          }}
+        />
       </div>
     </div>
   );

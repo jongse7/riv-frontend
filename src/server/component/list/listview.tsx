@@ -1,16 +1,21 @@
 import { useState } from "react";
-import ServerToggle from "./button/server_toggle";
-import { cn } from "../../common/utils/cn";
+import ServerToggle from "../button/server_toggle";
+import { cn } from "../../../common/utils/cn";
 
-function ListView({ items }: ListViewProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+function ListView({ items, className }: ListViewProps) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(1);
 
   const handleToggle = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
-    <div className="rounded-2xl bg-gray-02 text-gray-07  py-[0.8rem] min-w-[10rem] h-fit">
+    <div
+      className={cn(
+        className,
+        "rounded-2xl bg-gray-02 text-gray-07  py-[0.8rem] min-w-[10rem] h-fit"
+      )}
+    >
       {items.map((item, index) => (
         <div
           key={item.name + index}
@@ -40,6 +45,7 @@ export interface Item {
 
 interface ListViewProps {
   items: Item[];
+  className?: string;
 }
 
 export { ListView };

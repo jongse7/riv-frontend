@@ -16,7 +16,13 @@ export default function List({
 }: ListProps) {
   const defaultColor = isAct ? "text-gray-09" : "text-gray-07";
   return (
-    <div className={cn(className, defaultColor, "flex items-center h-fit")}>
+    <div
+      className={cn(
+        className,
+        defaultColor,
+        "flex items-center h-fit cursor-pointer hover:text-gray-09"
+      )}
+    >
       <span className="mr-[0.5rem]">{icon}</span>
       <span className="font-medium text-[1.2rem]">{text}</span>
     </div>

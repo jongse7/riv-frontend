@@ -1,10 +1,13 @@
-import ServerCard from "../../../component/server_card";
+import ServerCard from "../../../component/card/server_card";
+import { useResServerCard } from "../../../hook/use_res_server_card";
 import { mockGuilds } from "../const/mock_data";
 
 export default function ServerSection() {
+  const { count } = useResServerCard();
+
   const groupedGuilds = [];
-  for (let i = 0; i < mockGuilds.length; i += 3) {
-    groupedGuilds.push(mockGuilds.slice(i, i + 3));
+  for (let i = 0; i < mockGuilds.length; i += count) {
+    groupedGuilds.push(mockGuilds.slice(i, i + count));
   }
 
   return (
