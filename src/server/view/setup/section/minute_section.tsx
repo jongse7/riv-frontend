@@ -21,7 +21,6 @@ export default function MinuteSection() {
   };
 
   const mockData = Minutes;
-  console.log(isSheetOpen);
   return (
     <section className="w-full mx-[4rem] mt-[2.5rem] pr-[9rem] relative">
       <SearchBar />
