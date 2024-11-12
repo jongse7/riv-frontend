@@ -10,8 +10,9 @@ export default function MainRouter() {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/login/oauth2/code/discord" element={<RedirectPage />} />
+
       <Route path="/" element={<Layout />}>
+        <Route path="/login/oauth2/code/discord" element={<RedirectPage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/server" element={<ServerPage />} />
         <Route path="/setup" element={<SetupPage />} />
