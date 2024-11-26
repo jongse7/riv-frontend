@@ -2,7 +2,7 @@ import { Editor } from "@toast-ui/react-editor";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import { useRef } from "react";
 import styles from "./editor.module.css";
-import { useHeight } from "../../../common/hook/use_height";
+import { useHeight } from "../../../common/hook/response/use_height";
 import "./index.css";
 
 export default function RivEditor({ content = "" }: RivEditorProps) {

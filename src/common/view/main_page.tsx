@@ -1,13 +1,16 @@
-import { useNavigate } from "react-router-dom";
 import ServiceButton from "../../onboarding/component/service_button";
 import Riv from "../component/riv/riv";
+import { handleOnboarding } from "./utils/handle_onboarding";
 
 export default function MainPage() {
   return (
     <section className="w-screen h-screen flex flex-row items-center justify-center bg-[#EEF9FC] max-md:flex-col">
+      {/* 리브 이미지*/}
       <Riv className="w-[20rem] mr-[4rem] max-md:mr-0 max-md:w-[16rem] max-md:mb-[2rem]" />
       <div className="flex flex-col gap-[1.75rem]">
+        {/* 소개문구 섹션*/}
         <IntroSection />
+        {/* 버튼 섹션*/}
         <ButtonSection />
       </div>
     </section>
@@ -41,7 +44,10 @@ function IntroSection() {
 }
 
 function ButtonSection() {
-  const navigate = useNavigate();
+  // 디스코드 온보딩 url
+  const onboardUrl = `${
+    import.meta.env.VITE_API_URL
+  }oauth2/authorization/discord`;
   return (
     <div className="flex flex-row items-start gap-[1rem] max-sm:flex-col max-sm:items-center">
       <ServiceButton
@@ -49,7 +55,7 @@ function ButtonSection() {
         icon="/assets/icon/discord.svg"
         className="bg-gradient-to-br from-discord-left to-discord-right px-[1.4rem]"
         iconSize="0.8rem"
-        onClick={() => navigate("/server")}
+        onClick={() => handleOnboarding({ url: onboardUrl })}
       />
       <ServiceButton
         text="View on Github"

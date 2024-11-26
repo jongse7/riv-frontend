@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useResize } from "../../common/hook/use_resize";
+import { useResize } from "../../common/hook/response/use_resize";
 
 export function useResServerCard() {
   const { width } = useResize();
