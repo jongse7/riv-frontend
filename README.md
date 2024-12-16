@@ -112,23 +112,47 @@ Riv-Frontend는 React 기반의 웹 클라이언트 프로젝트입니다. 이 �
    - 검색창에 입력한 키워드를 바탕으로 회의록 제공
 
 4. **정렬, 카테고리 리스트**
-   - Bot이 초대된 서버는 GO, 그렇지 않은 서버는 Setup으로 표시
+   - 정렬 기준과 회의 카테고리 별로 회의록을 분류하는 리스트 컴포넌트
+     
+5. **회의록 목록**
+   - 해당 서버의 회의록 목록 제공
+     
+6. **회의록 수정/삭제**
+   - 수정을 누르게 되면, 해당 회의록을 수정할 수 있는 마크업 에디터가 모달 형태로 제공됨
+   - 삭제를 누르게 되면, 해당 회의록을 삭제
 
-## 5. 개발자 가이드
+### '/setup/:id' - 회의록페이지(회의록 수정 on)
+
+
+
+## 4. 개발자 가이드
 
 ### 코드 구조
 ```
-riv-bot/
-├── bot/
-│   ├── __init__.py
-│   └── commands/
-├── utils/
-│   ├── audio.py
-│   └── logger.py
-├── services/
-│   ├── transcription.py
-│   └── summary.py
-└── main.py
+src/
+├── common/
+│   ├── api/
+│   ├── component/
+│   ├── hook/
+│   ├── layout/
+│   ├── utils/
+│   └── view/
+├── onboarding/
+│   ├── component/
+│   ├── hook/
+│   └── view/
+│       └── redirect/
+├── route/
+│   ├── outlet.tsx
+│   ├── route.tsx
+│   └── ScollToTop.tsx
+├── server/
+│   ├── component/
+│   ├── hook/
+│   └── view/
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
 
 ### 주요 클래스 및 함수
@@ -149,7 +173,7 @@ riv-bot/
        # 발화자 매칭 로직
    ```
 
-## 6. 문제 해결
+## 5. 문제 해결
 
 ### 일반적인 문제
 1. **봇 응답 없음**
@@ -177,7 +201,7 @@ INFO: 일반 정보
 ERROR: 오류 정보
 ```
 
-## 7. 기여 가이드
+## 6. 기여 가이드
 
 ### 코드 스타일
 - PEP 8 준수
